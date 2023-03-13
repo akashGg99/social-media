@@ -3,7 +3,7 @@ const objectId= mongoose.Schema.Types.ObjectId
 
 const commentSchema = mongoose.Schema({
     postId:{type:objectId, required: true},
-    userId:{type:objectId, required: true},
+    commentor_userId:{type:objectId, required: true},
     commentContent:{type:String},
     replies:[{
         userId:{type:objectId},
