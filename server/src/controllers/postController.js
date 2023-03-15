@@ -22,7 +22,9 @@ const getPost = async function (req, res) {
     try {
         const {postId}= req.body;
 
-        let fetchedPost = await postModel.find({postId}).populate("comments")
+        let fetchedPost = await postModel.findById(postId)
+
+        // fetchedPost.populated("comment")
 
         if (!fetchedPost) res.status(400).send({ status: false, message: "request failed." })
 

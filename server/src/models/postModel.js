@@ -5,7 +5,7 @@ const postSchema = mongoose.Schema({
 
     userId:{type:objectId, required:true},
     postContent:{type:String, required:true},
-    comments:[{type:objectId, ref:"comment"}],
+    comments:{type:objectId, ref:'Comment'},
 
     isDeleted:{type:Boolean,default:false}
 })
